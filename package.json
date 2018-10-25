@@ -1,0 +1,64 @@
+{
+  "name": "shop",
+  "version": "1.0.0",
+  "description": "新版商城",
+  "private": true,
+  "scripts": {
+    "start": "cross-env PORT=8888 umi dev",
+    "build": "umi build",
+    "test": "umi test",
+    "analyze": "cross-env ANALYZE=1 umi build",
+    "lint": "eslint --ext .js src && npm run lint:style",
+    "lint:style": "stylelint \"src/**/*.less\" --syntax less",
+    "lint:fix": "eslint --fix --ext .js src && npm run lint:style",
+    "lint-staged:js": "eslint --ext .js",
+    "precommit": "lint-staged",
+    "prettier": "prettier --write ./src/**/**/**/*"
+  },
+  "dependencies": {
+    "antd-mobile": "^2.2.5",
+    "react": "^16.5.1",
+    "enzyme": "^3.4.4",
+    "prop-types": "^15.5.10",
+    "dva": "^2.4.0",
+    "hash.js": "^1.1.5",
+    "qs": "^6.5.2"
+  },
+  "optionalDependencies": {
+    "puppeteer": "^1.9.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "cross-env": "^5.1.1",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-config-umi": "^0.1.5",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-compat": "^2.5.1",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-markdown": "^1.0.0-beta.6",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2",
+    "prettier": "1.14.2",
+    "stylelint": "^9.4.0",
+    "stylelint-config-prettier": "^4.0.0",
+    "stylelint-config-standard": "^18.0.0",
+    "umi": "^2.1.1",
+    "umi-plugin-react": "^1.0.1"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,less}": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{js,jsx}": "npm run lint-staged:js",
+    "**/*.less": "stylelint --syntax less"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
