@@ -1,5 +1,7 @@
 # umi-antd-mobile
 
+#### 如果本项目对你有帮助，请不要吝啬你的star
+
 以 [UMI](https://umijs.org/zh/) + [DVA](https://dvajs.com/) 为底层框架，包含完整的前端工程化实践
 
 参考了 [ant-pro](https://pro.ant.design/index-cn)
@@ -8,7 +10,7 @@
 
     |-- config                                # umi配置，包含路由配置
     |-- mock                                  # 本地模拟数据
-    |-- chrome-man                            # chrome，用来支持E2E测试
+    |-- chrome-mac                            # chrome，用来支持E2E测试
     |-- public                                
     |   |-- favicon.png                       # Favicon
     |   |-- iconfont                          # 字体图标资源
@@ -100,8 +102,20 @@ import BizIcon from '../BizIcon'
 <BizIcon type="xxx" />
 ```
 
+## 移动端滚动问题
 
-持续完善中...
+避免使用 外层容器设置overflow:hidden模拟的滚动，在ios下会很卡顿，加了-webkit-overflow-scrolling : touch；之后，会引起更多的问题。详情请看这里 [深入研究-webkit-overflow-scrolling:touch以及ios滚动](https://www.cnblogs.com/xiahj/p/8036419.html)
 
+正确的姿势：
+1: 通过布局技巧，使用body滚动。如本项目中，我对tabBar组件嵌套路由的处理。
+2: 封装滚动容器实现局部滚动。
 
-## 如果本项目对你有帮助，请不要吝啬你的star
+## TODO
+
+- [x] tabBar嵌套路由
+- [x] 集成nprogress进度条
+- [x] 部署示例
+- [ ] 封装滚动容器
+- [ ] 封装antd-mobile没有的常用组件
+- [ ] mock数据示例
+- [ ] 具体业务覆盖单元测试例子

@@ -28,3 +28,31 @@ body {
   background-color: #fff;
   height: 50px; */
 }
+
+/* 样式覆盖，解决移动端滚动问题，避免容器模拟滚动，都采用body滚动，以及自己封装的滚动容器 */
+.am-tab-bar {
+  position: relative;
+  overflow: visible !important;
+}
+.am-tabs {
+  width: 100%;
+  overflow: visible !important;
+}
+.am-tabs-pane-wrap {
+  overflow-y: visible !important;
+}
+.am-tab-bar-item {
+  height: auto !important;
+  padding-bottom: 50px;
+}
+
+.am-tabs-tab-bar-wrap {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 10;
+}

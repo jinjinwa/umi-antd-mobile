@@ -21,7 +21,8 @@
 chrome-mac
 
 # 部署目录
-/deploy
+/deploy/node_modules
+/deploy/dist
 
 # 测试覆盖率统计
 /coverage

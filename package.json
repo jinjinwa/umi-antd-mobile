@@ -4,7 +4,7 @@
   "description": "新版商城",
   "private": true,
   "scripts": {
-    "start": "cross-env PORT=8888 umi dev",
+    "start": "cross-env PORT=8090 umi dev",
     "build": "umi build",
     "test": "umi test",
     "analyze": "cross-env ANALYZE=1 umi build",
@@ -17,17 +17,19 @@
   },
   "dependencies": {
     "antd-mobile": "^2.2.5",
-    "react": "^16.5.1",
-    "enzyme": "^3.4.4",
-    "prop-types": "^15.5.10",
     "dva": "^2.4.0",
+    "enzyme": "^3.4.4",
     "hash.js": "^1.1.5",
-    "qs": "^6.5.2"
+    "nprogress": "^0.2.0",
+    "prop-types": "^15.5.10",
+    "qs": "^6.5.2",
+    "react": "^16.5.1"
   },
   "optionalDependencies": {
     "puppeteer": "^1.9.0"
   },
   "devDependencies": {
+    "@babel/polyfill": "^7.0.0",
     "babel-eslint": "^9.0.0",
     "cross-env": "^5.1.1",
     "eslint": "^5.4.0",
