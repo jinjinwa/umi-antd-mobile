@@ -1,11 +1,90 @@
 /*
  * @Author: Jan-superman 
  * @Date: 2018-09-27 20:39:08 
- * @Last Modified by: Jan-superman
- * @Last Modified time: 2018-11-07 23:03:33
+ * @Last Modified by: superman
+ * @Last Modified time: 2018-12-25 01:37:41
  */
 @import '~antd-mobile/dist/antd-mobile.less';
 
 .category {
+  position: relative;
   width: 100%;
+  .searchbar {
+    height: 88px;
+    background-color: #eee;
+  }
+
+  .category_tab {
+    height: 100%;
+    width: 170px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #f8f8f8;
+    .list_item {
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+      color: #333;
+      font-size: 28px;
+      &.cur {
+        color: @brand-primary;
+        background-color: #fff;
+      }
+    }
+  }
+
+  .category_content {
+    height: 100%;
+    position: absolute;
+    left: 170px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    dl {
+      padding: 0 20px 0;
+      dt {
+        padding: 30px 0;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1;
+        color: #333;
+      }
+      dd {
+        .categoriesItem {
+          box-sizing: border-box;
+          position: relative;
+          float: left;
+          width: 26%;
+          padding-top: 26%;
+          margin: 0 3.5% 5%;
+          font-size: 24px;
+          text-align: center;
+          .img_wrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            img {
+              width: 100%;
+              border: 0 none;
+              vertical-align: top;
+            }
+          }
+          .describe {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 24px;
+            line-height: 50px;
+            height: 50px;
+            margin: 0 -10%;
+            background: #fff;
+          }
+        }
+      }
+    }
+  }
 }

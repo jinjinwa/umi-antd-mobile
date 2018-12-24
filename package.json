@@ -4,7 +4,7 @@
   "description": "新版商城",
   "private": true,
   "scripts": {
-    "start": "cross-env PORT=8090 umi dev",
+    "start": "cross-env PORT=8099 umi dev",
     "build": "umi build",
     "test": "umi test",
     "analyze": "cross-env ANALYZE=1 umi build",
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "antd-mobile": "^2.2.5",
+    "better-scroll": "^1.13.2",
     "dva": "^2.4.0",
     "enzyme": "^3.4.4",
     "hash.js": "^1.1.5",

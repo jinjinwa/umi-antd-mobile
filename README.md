@@ -107,15 +107,81 @@ import BizIcon from '../BizIcon'
 避免使用 外层容器设置overflow:hidden模拟的滚动，在ios下会很卡顿，加了-webkit-overflow-scrolling : touch；之后，会引起更多的问题。详情请看这里 [深入研究-webkit-overflow-scrolling:touch以及ios滚动](https://www.cnblogs.com/xiahj/p/8036419.html)
 
 正确的姿势：
-1: 通过布局技巧，使用body滚动。如本项目中，我对tabBar组件嵌套路由的处理。
-2: 封装滚动容器实现局部滚动。
+1. 通过布局技巧，使用body滚动。如本项目中，我对tabBar组件嵌套路由的处理。
+2. 封装滚动容器实现局部滚动。目前封装了 [better-scroll](https://github.com/ustbhuangyi/better-scroll)
+
+
+
+## iPhone x兼容处理 例子
+
+1. 第一步：设置网页在可视窗口的布局方式
+
+```html
+<meta name="viewport" content="width=device-width, viewport-fit=cover">
+```
+2. 第二步：页面主体内容限定在安全区域内
+
+```css
+body {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+```
+3. fixed元素适配。示例：
+
+这里我们只需要关注 safe-area-inset-bottom 这个变量，因为它对应的就是小黑条的高度（横竖屏时值不一样）。
+
+参考： [iphone X 适配方案](https://aotu.io/notes/2017/11/27/iphonex/index.html)
+
+```html
+<!-- 布局例子 -->
+
+<div className="container">
+<div className="box"></div>
+<div className="fixed-bottom footer"></div>
+</div>
+```
+
+```css
+/* 定义在global.css，可以直接使用 */
+
+.fixed-bottom{
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  position: fixed;
+  z-index: 10;
+  background-color: #fff;
+  /* 具体应用位置，通过叠加css确定元素本身样式
+  width: 100%;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 50px; */
+}
+.footer{
+   width:100%;
+   height:50px;
+   left:0px;
+   right:0px;
+   bottom:0px;
+}
+.box{
+  padding-bottom: calc(50px + env(safe-area-inset-bottom));
+}
+```
+
+## FAQ
+
+### 1、运行git commit后发现 less文件 length-zero-no-unit报错。
+
+由于开启了stylelint以及git precommit验证，触发验证规则则无法提交。可参考 [length-zero-no-unit](https://stylelint.io/user-guide/rules/length-zero-no-unit/) 解决验证问题。
 
 ## TODO
 
-- [x] tabBar嵌套路由
+- [x] tabBar嵌套路由
 - [x] 集成nprogress进度条
 - [x] 部署示例
-- [ ] 封装滚动容器
+- [x] 封装滚动容器
 - [ ] 封装antd-mobile没有的常用组件
 - [ ] mock数据示例
 - [ ] 具体业务覆盖单元测试例子

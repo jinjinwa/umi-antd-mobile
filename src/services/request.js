@@ -1,8 +1,8 @@
 /*
  * @Author: Jan-superman 
  * @Date: 2018-10-14 16:02:56 
- * @Last Modified by:   Jan-superman 
- * @Last Modified time: 2018-10-14 16:02:56 
+ * @Last Modified by: superman
+ * @Last Modified time: 2018-12-25 00:56:08
  */
 
 import fetch from 'dva/fetch';
@@ -82,7 +82,7 @@ export default function request(url, option) {
     .digest('hex');
 
   const defaultOptions = {
-    credentials: 'include',
+    // credentials: 'include',
   };
   const newOptions = { ...defaultOptions, ...options };
   if (

@@ -1,3 +1,133 @@
+/* reset css */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+html {
+  font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif,
+    'Droid Sans Fallback';
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 /* iphonex 兼容方案
 https://aotu.io/notes/2017/11/27/iphonex/index.html */
 
@@ -10,16 +140,17 @@ body,
 body {
   margin: 0;
   overflow-x: hidden;
+  background-color: #fff !important;
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
 }
-
-/* iphonex fix元素适配 */
-.fixed {
+/* iphonex fix底部元素适配 */
+:global(.fixed_bottom) {
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
   position: fixed;
   z-index: 10;
+  background-color: #fff;
   /* 具体应用位置，通过叠加css确定元素本身样式
   width: 100%;
   left: 0px;
@@ -27,6 +158,12 @@ body {
   bottom: 0px;
   background-color: #fff;
   height: 50px; */
+}
+
+:global(.clearfix:after) {
+  content: '';
+  display: table;
+  clear: both;
 }
 
 /* 样式覆盖，解决移动端滚动问题，避免容器模拟滚动，都采用body滚动，以及自己封装的滚动容器 */
@@ -43,7 +180,7 @@ body {
 }
 .am-tab-bar-item {
   height: auto !important;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 
 .am-tabs-tab-bar-wrap {

@@ -1,8 +1,8 @@
 /*
  * @Author: Jan-superman 
  * @Date: 2018-09-27 20:38:14 
- * @Last Modified by: Jan-superman
- * @Last Modified time: 2018-11-07 23:17:13
+ * @Last Modified by: superman
+ * @Last Modified time: 2018-12-25 00:51:39
  */
 
 import React, { PureComponent } from 'react';
@@ -16,12 +16,11 @@ NProgress.configure({ showSpinner: false });
 
 // 底部有bar菜单
 const BarRoutes = ['/shop', '/', '/me', '/category'];
+let currHref = '';
 
 class BasicLayout extends PureComponent {
   render() {
     const { children, location, loading } = this.props;
-
-    let currHref = '';
     const { href } = window.location; // 浏览器地址栏中地址
     if (currHref !== href) {
       // currHref 和 href 不一致时说明进行了页面跳转

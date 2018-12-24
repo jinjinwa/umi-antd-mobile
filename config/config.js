@@ -1,6 +1,7 @@
 // https://umijs.org/config/
 import path from 'path';
 import pageRoutes from './router.config';
+import theme from '../src/theme';
 
 export default {
   // add for transfer to umi
@@ -19,7 +20,7 @@ export default {
         },
         dll: false,
         pwa: false,
-        hd: false,
+        hd: true,
         routes: {
           exclude: [],
         },
@@ -33,8 +34,7 @@ export default {
   // Theme for antd-mobile
   // https://github.com/ant-design/ant-design-mobile/blob/master/components/style/themes/default.less
   theme: {
-    'brand-primary': '#00CC99',
-    'brand-primary-tap': '#00CC66',
+    'brand-primary': theme.primaryColor,
   },
   //   ignoreMomentLocale: true,
   lessLoaderOptions: {
@@ -44,8 +44,10 @@ export default {
     mergeRules: false,
   },
   targets: {
-    android: 6,
+    android: 5,
     ios: 7,
+    chrome: 58,
+    ie: 9,
   },
   outputPath: './deploy/dist',
   hash: true,
