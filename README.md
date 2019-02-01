@@ -196,8 +196,5 @@ body {
 
 ## 与我联系
 
-![](https://github.com/jinjinwa/umi-antd-mobile/tree/master/qrcode/Group.jpeg) | 
-![](https://github.com/jinjinwa/umi-antd-mobile/tree/master/qrcode/personal.jpeg)
- :---: | :---: 
- 微信群 | 个人微信
- 
+<img width="300px" src="qrcode/Group.png" />
+<img width="300px" src="qrcode/personal.png" />
