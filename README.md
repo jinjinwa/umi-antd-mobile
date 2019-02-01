@@ -158,7 +158,7 @@ body {
   bottom: 0px;
   height: 50px; */
 }
-.footer{
+.footer{
    width:100%;
    height:50px;
    left:0px;
@@ -169,6 +169,12 @@ body {
   padding-bottom: calc(50px + env(safe-area-inset-bottom));
 }
 ```
+## 支持环境
+
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="iOS Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br> iOS Safari | [<img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=356c6916013387449cc5287a6934bec4/d53f8794a4c27d1e11530c8216d5ad6eddc4387a.jpg" alt="Android" width="24px" height="24px" />](https://developer.android.com/)</br> Android 
+| --------- | --------- |
+| iOS 7+ | Android 4.0+ |
+
 
 ## FAQ
 
@@ -182,6 +188,16 @@ body {
 - [x] 集成nprogress进度条
 - [x] 部署示例
 - [x] 封装滚动容器
+- [x] 支持TypeScript
+- [x] 支持pwa
 - [ ] 封装antd-mobile没有的常用组件
 - [ ] mock数据示例
 - [ ] 具体业务覆盖单元测试例子
+
+## 与我联系
+
+![](https://github.com/jinjinwa/umi-antd-mobile/tree/master/qrcode/Group.jpeg) | 
+![](https://github.com/jinjinwa/umi-antd-mobile/tree/master/qrcode/personal.jpeg)
+ :---: | :---: 
+ 微信群 | 个人微信
+ 

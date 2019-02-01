@@ -19,7 +19,12 @@ export default {
           defaultTitle: '商城',
         },
         dll: false,
-        pwa: false,
+        pwa: {
+          workboxPluginMode: 'InjectManifest',
+          workboxOptions: {
+            importWorkboxFrom: 'local',
+          },
+        },
         hd: true,
         routes: {
           exclude: [],

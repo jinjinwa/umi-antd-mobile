@@ -1,7 +1,7 @@
 {
-  "name": "shop",
+  "name": "umi-mobile-template",
   "version": "1.0.0",
-  "description": "新版商城",
+  "description": "umi移动端模板项目",
   "private": true,
   "scripts": {
     "start": "cross-env PORT=8099 umi dev",
@@ -11,15 +11,18 @@
     "lint": "eslint --ext .js src && npm run lint:style",
     "lint:style": "stylelint \"src/**/*.less\" --syntax less",
     "lint:fix": "eslint --fix --ext .js src && npm run lint:style",
+    "tslint": "npm run tslint:fix",
+    "tslint:fix": "tslint --fix 'src/**/*.ts*'",
     "lint-staged:js": "eslint --ext .js",
     "precommit": "lint-staged",
-    "prettier": "prettier --write ./src/**/**/**/*"
+    "prettier": "node ./scripts/prettier.js"
   },
   "dependencies": {
     "antd-mobile": "^2.2.5",
     "better-scroll": "^1.13.2",
     "dva": "^2.4.0",
     "enzyme": "^3.4.4",
+    "glob": "^7.1.3",
     "hash.js": "^1.1.5",
     "nprogress": "^0.2.0",
     "prop-types": "^15.5.10",
@@ -32,6 +35,8 @@
   "devDependencies": {
     "@babel/polyfill": "^7.0.0",
     "babel-eslint": "^9.0.0",
+    "chalk": "^2.4.2",
+    "check-prettier": "^1.0.1",
     "cross-env": "^5.1.1",
     "eslint": "^5.4.0",
     "eslint-config-airbnb": "^17.0.0",
@@ -50,12 +55,15 @@
     "stylelint": "^9.4.0",
     "stylelint-config-prettier": "^4.0.0",
     "stylelint-config-standard": "^18.0.0",
-    "umi": "^2.1.1",
-    "umi-plugin-react": "^1.0.1"
+    "tslint": "^5.10.0",
+    "tslint-config-prettier": "^1.10.0",
+    "tslint-react": "^3.6.0",
+    "umi": "^2.4.4",
+    "umi-plugin-react": "^1.4.2"
   },
   "lint-staged": {
     "**/*.{js,jsx,less}": [
-      "prettier --write",
+      "node ./scripts/lint-prettier.js",
       "git add"
     ],
     "**/*.{js,jsx}": "npm run lint-staged:js",
@@ -63,5 +71,17 @@
   },
   "engines": {
     "node": ">=8.0.0"
+  },
+  "checkFiles": [
+    "src/**/*.js*",
+    "src/**/*.ts*",
+    "src/**/*.less",
+    "config/**/*.js*",
+    "scripts/**/*.js"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
   }
 }
