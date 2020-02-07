@@ -60,7 +60,7 @@ yarn build
 
 单元测试你需要掌握的几个库
 
-- Google Chrome官方出品的无洁面chrome工具： [puppeteer](https://zhaoqize.github.io/puppeteer-api-zh_CN/#/)
+- Google Chrome官方出品的无界面chrome工具： [puppeteer](https://zhaoqize.github.io/puppeteer-api-zh_CN/#/)
 
 - FaceBook推出的javascript单元测试框架，可搭配别的一起使用： [jest](https://jestjs.io/zh-Hans/)
 
